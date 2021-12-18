@@ -14,9 +14,13 @@ section, h1, li, p, img {
 }
 
 
-#nav{
+nav{
     color: white;
     margin-bottom: 2rem;
+}
+
+.white-text{
+    color: white;
 }
 
 .flex-list{
