@@ -1,0 +1,113 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #1d1d1d;
+}
+
+section, h1, li, p, img {
+    -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    -webkit-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    -o-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    transition: width 1s ease-in-out, left 1.5s ease-in-out;
+}
+
+
+#nav{
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.flex-list{
+    display: flex;
+    margin: 1rem 0 1rem 0;
+    padding: 0;
+    gap: 1rem;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-list *:hover{
+    color: steelblue;
+    cursor: pointer;
+}
+
+.flex-list button{
+    all: unset;
+    font-size: 1rem;
+    font-weight: bold;
+    color: steelblue;
+}
+
+.flex-focus{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #313131;
+}
+
+.flex-focus *{
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.flex-focus > p{
+    color: white;
+    text-align: center;
+}
+
+.flex-focus img{ 
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.position-overlap h1{
+    font-family: "Brush Script MT", cursive;
+    font-size: 20vw;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: steelblue;
+    -webkit-text-stroke: 0.1rem white;
+    filter: drop-shadow(0.2rem 0.2rem 0.05rem black);
+    }
+
+.position-overlap p{
+    font-size:5vw;
+    padding: 0.15rem;
+    color: white;
+    text-align: center;
+}
+
+@media (min-width: 700px){
+    .position-overlap{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 40%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: black;
+    }
+
+    .position-overlap h1{
+        font-size: 10rem;
+        margin-bottom: 0;
+    }
+
+    .position-overlap p{
+        font-size: x-large;
+        background: white;
+        width: 50%;
+        color: black;
+        margin-top: -1rem;
+    }
+
+    .flex-focus > p{
+        width: 80%;
+    }
+}
