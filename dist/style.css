@@ -1,8 +1,13 @@
 html, body{
+    min-height: 100vh;
+    width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #1d1d1d;
+    background: #313131;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 section, h1, li, p, img {
@@ -13,19 +18,48 @@ section, h1, li, p, img {
     transition: width 1s ease-in-out, left 1.5s ease-in-out;
 }
 
-
-nav{
+nav, footer{
+    text-align: center;
+    padding: 0.3rem;
+    background: #1d1d1d;
     color: white;
-    margin-bottom: 2rem;
+}
+
+
+nav, main, footer{
+    flex-shrink: 0;
+}
+
+main{
+    display: flex;
+    flex-grow: 1;
+    padding: 0.5rem;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
 }
 
 .white-text{
     color: white;
 }
 
+.width-80{
+    width: 80%;
+}
+
+.rounded{
+    border-radius: 1rem;
+}
+
 .flex-list{
     display: flex;
-    margin: 1rem 0 1rem 0;
     padding: 0;
     gap: 1rem;
     list-style-type: none;
@@ -45,32 +79,38 @@ nav{
     color: steelblue;
 }
 
-.flex-focus{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background: #313131;
+.grid-overlap{
+    display: grid;
+    width: 90%;
 }
 
-.flex-focus *{
-    margin: auto;
-    margin-bottom: 1rem;
+@media (min-width: 1000px) {
+    
 }
 
-.flex-focus > p{
-    color: white;
-    text-align: center;
+.grid-bottom, .grid-top{
+    grid-area: 1/1;
 }
 
-.flex-focus img{ 
+.grid-bottom > img{
     width: 100%;
-    border-radius: 1rem;
+    height: auto;
 }
 
-.position-overlap h1{
+.grid-top{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-bottom{
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-overlap h1{
     font-family: "Brush Script MT", cursive;
     font-size: 20vw;
     font-weight: bold;
@@ -78,40 +118,12 @@ nav{
     color: steelblue;
     -webkit-text-stroke: 0.1rem white;
     filter: drop-shadow(0.2rem 0.2rem 0.05rem black);
-    }
-
-.position-overlap p{
-    font-size:5vw;
-    padding: 0.15rem;
-    color: white;
-    text-align: center;
 }
 
-@media (min-width: 700px){
-    .position-overlap{
-        position: absolute;
-        left: 0;
-        width: 100%;
-        top: 40%;
-        transform: translateY(-50%);
-        text-align: center;
-        color: black;
-    }
-
-    .position-overlap h1{
-        font-size: 10rem;
-        margin-bottom: 0;
-    }
-
-    .position-overlap p{
-        font-size: x-large;
-        background: white;
-        width: 50%;
-        color: black;
-        margin-top: -1rem;
-    }
-
-    .flex-focus > p{
-        width: 80%;
-    }
+.grid-overlap p{
+    font-size:5vw;
+    padding: 0.15rem;
+    margin-top: -1rem;
+    color: black;
+    background: white;
 }
