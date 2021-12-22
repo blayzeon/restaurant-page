@@ -124,6 +124,10 @@ main{
     background: white;
 }
 
+.margin{
+    margin: 1rem;
+}
+
 #dynamic-elm{
     width: 80%;
 }
