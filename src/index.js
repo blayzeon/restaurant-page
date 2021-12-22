@@ -1,5 +1,6 @@
 import loadHome from './restaurant_home';
 import loadLocation from './location';
+import loadOrder from './order';
 
 
 /* HTML CONTENT */
@@ -7,6 +8,26 @@ import loadLocation from './location';
 // element from index.html
 const container = document.querySelector('#content');
 const main = document.createElement('main');
+const footer = document.createElement('footer');
+
+function generateMain(source){
+    // clear old content
+    if (container.contains(main)){
+        main.innerHTML = ``;
+    }
+
+    // add the new content
+    main.appendChild(source)
+    container.appendChild(main);
+
+    // FOOTER
+    if (container.contains(footer)){
+        container.removeChild(footer);
+    }
+    footer.innerText = ('Created by blayzeon 12/18/2021');
+    container.appendChild(footer);
+
+};
 
 // NAV BAR
 (function(){
@@ -17,7 +38,6 @@ const main = document.createElement('main');
     const navLinks = [
         'Home',
         'Location',
-        'About',
         '<button>Order Online</button>',
     ];
 
@@ -36,23 +56,15 @@ const main = document.createElement('main');
             const menuItems = [
                 loadHome(),
                 loadLocation(),
-                //loadAbout(),
-                //loadOrder(),
+                loadOrder(),
             ];
             let index = parseInt(button.id);
-            main.appendChild(menuItems[index]);
+            generateMain(menuItems[index]);
         });
     });
 
 })();
 
-// MAIN
-//main.appendChild(loadHome())
-container.appendChild(main);
-
-// FOOTER
-const footer = document.createElement('footer');
-footer.innerText = ('Created by blayzeon 12/18/2021');
-container.appendChild(footer);
+generateMain(loadHome());
 
 /* --- */

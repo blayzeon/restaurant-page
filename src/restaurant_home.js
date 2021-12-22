@@ -4,6 +4,8 @@
 
 
 function loadHome(){
+    const lorem = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus dolores sequi corporis iure beatae consequatur esse odio in illum doloremque.`;
+
     // main
     const gridImg = document.createElement('div');
 
@@ -16,7 +18,7 @@ function loadHome(){
         <div class="grid-top">
             <h1>Restaurant</h1>
             <h2>The best food near you</h2>
-            <div id="dynamic-elm"><p class="dynamic-text">Whether you want chewable food, drinkable food, or other foodlike options, Restaurant is the ideal place for you to adequately consume a variety of options for a reasonable price.</p></div>
+            <div id="dynamic-elm"><p class="dynamic-text">${lorem}</p></div>
         </div>
     `;
     return gridImg;
